@@ -1,0 +1,50 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.app {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  height: fit-content;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+h1 { font-size: 1.6rem; color: #1a202c; margin-bottom: 4px; }
+
+.summary {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 1.25rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 10px 14px;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.done .task-text {
+  text-decoration: line-through;
+}
