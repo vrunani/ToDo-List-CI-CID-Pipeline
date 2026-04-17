@@ -1,20 +1,9 @@
-# Stage 1: Build React App
-FROM node:20-alpine AS build
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm ci
-
-COPY . .
-
-RUN npm run build
-
-
-# Stage 2: Serve App
+# Just serve static files with Nginx — no build step needed
 FROM nginx:alpine
 
-COPY --from=build /app/dist /usr/share/nginx/html
+# Copy your HTML/CSS/JS files directly into Nginx
+COPY index.html /usr/share/nginx/html/
+COPY style.css /usr/share/nginx/html/
+COPY script.js /usr/share/nginx/html/
 
 EXPOSE 80
